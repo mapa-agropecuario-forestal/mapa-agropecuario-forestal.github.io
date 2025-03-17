@@ -1,0 +1,13 @@
+# Introducción general {.unnumbered}
+
+Este sitio contiene mapas de referencia de tierras agropecuarias y cobertura forestal de Costa Rica, junto con el código fuente y la documentación utilizados para generarlos. El objetivo de estos mapas es servir como línea de base para validar que no ha ocurrido deforestación en las áreas de producción de cultivos clave, en vista de los requisitos de trazabilidad establecidos por la Unión Europea en 2023.
+
+El mapa más actualizado, correspondiente al año 2020, se muestra en la @fig-mapa-agropecuario-forestal-2020.
+
+![Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png){#fig-mapa-agropecuario-forestal-2020 .lightbox fig-alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020" fig-align="center"}
+
+Los mapas son el producto de la combinación de capas geoespaciales de cultivos, áreas silvestres protegidas y humedales, las cuales fueron facilitadas por instituciones estatales, centros de investigación y cámaras de agricultores.
+
+Se han generado mapas para los años:
+
+-   [2020](2020/index.qmd)

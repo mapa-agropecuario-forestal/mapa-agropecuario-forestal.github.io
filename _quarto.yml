@@ -1,0 +1,15 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Mapa de referencia de tierras agropecuarias y cobertura forestal"
+  chapters:
+    - index.qmd
+    - 2020/index.qmd
+
+format:
+  html:
+    lang: es
+    theme: cosmo
+    toc-expand: 4

@@ -1,0 +1,285 @@
+# Mapa del año 2020 {.unnumbered}
+
+```{r}
+#| label: carga-paquetes
+#| echo: false
+#| message: false
+#| warning: false
+
+library(DT)
+```
+
+## Introducción {.unnumbered}
+
+El mapa correspondiente al año 2020 se muestra en la @fig-mapa-agropecuario-forestal-2020. El repositorio con el código fuente y la documentación está disponible en [https://github.com/mapa-agropecuario-forestal/2020](https://github.com/mapa-agropecuario-forestal/2020).
+
+![Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png){#fig-mapa-agropecuario-forestal-2020 .lightbox fig-alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020" fig-align="center"}
+
+## Datos {.unnumbered}
+
+El mapa se elaboró a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.
+
+```{r}
+#| label: definicion-fuentes-datos
+#| echo: false
+#| message: false
+#| warning: false
+
+datos <- data.frame(
+  Archivo = c(
+    "A_CACAO_IICA.shp", "areas-silvestres-protegidas.gpkg", "Cobertura forestal 2021.shp",
+    "cultivo-cafe-2017-2018.gpkg", "cultivo-cana-2020.gpkg", "cultivo-palma-2019.gpkg",
+    "cultivo-pastos-2019.gpkg", "cultivo-pastos-2020.gpkg", "cultivo-pina-2019.gpkg",
+    "cultivos-2017.gpkg", "fincas_Bananeras.shp", "MC21_RECLASIFICADO_IPCC_9_7_2024.tif",
+    "patrimonio-natural-estado.gpkg", "plantacion-forestal-2008-2020.gpkg", "Red_Vial_Nacional.shp",
+    "registro-nacional-humedales.gpkg"
+  ),
+  Fuente = c(
+    "IICA", "SINAC (SNIT)", "SINAC",
+    "ICAFE", "LAICA", "MOCUPP-PRIAS (SNIT)",
+    "MOCUPP-UCR (SNIT)", "MOCUPP-UCR (SNIT)", "MOCUPP-PRIAS (SNIT)",
+    "IGN", "CORBANA", "Secretaría REDD+",
+    "SINAC (SNIT)", "FONAFIFO", "MOPT",
+    "SINAC (SNIT)"
+  ),  
+  Tipo = c(
+    "Vectorial", "Vectorial", "Vectorial",
+    "Vectorial", "Vectorial", "Vectorial",
+    "Vectorial", "Vectorial", "Vectorial",
+    "Vectorial", "Vectorial", "Raster",
+    "Vectorial", "Vectorial", "Vectorial",
+    "Vectorial"
+  ),
+  Comentarios = c(
+    "", "", "", "", "Se generó al fusionar archivos de varias regiones",
+    "", "", "", "",
+    "", "", "Contiene varias capas (zonas urbanas, suelo desnudo, bosques, cuerpos de agua, etc.)",
+    "", "Se generó al fusionar archivos de varias regiones", "",
+    ""
+  )
+)
+```
+
+```{r}
+#| label: despliegue-datos
+#| echo: false
+#| message: false
+#| warning: false
+
+datos |>
+  datatable(rownames = FALSE,
+            options = list(
+              pageLength = 16,
+              language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')
+            ))
+```
+
+Algunos archivos se descargaron de servicios web publicados por diferentes instituciones y presentados en el [Sistema Naional de Información Territorial (SNIT)](https://www.snitcr.go.cr/). Otros fueron entregados directamente por las instituciones y las cámaras de agricultores.
+
+## Procesamiento {.unnumbered}
+
+Los datos de entrada se procesaron en un flujo de trabajo de seis pasos, el cual se esquematiza en la @fig-procesamiento.
+
+```{mermaid}
+%%| label: fig-procesamiento
+%%| fig-cap: Procesamiento de datos.
+
+flowchart TB
+    subgraph Procesos_1_2 [ ]
+      direction LR
+      A("1. Remuestreo de capas raster")
+      B("2. Rasterización de capas vectoriales")
+    end
+
+    style Procesos_1_2 fill:none,stroke:none
+
+    A --> C["3. Combinación de capas remuestreadas y rasterizadas"]
+    B --> C
+    C --> D["4. Reclasificación del archivo combinado"]
+    D --> E["5. Compresión del archivo reclasificado"]
+    E --> F["6. Generación de estadísticas"]
+```
+
+Este flujo de trabajo se implementó a través de un conjunto de programas desarrollados en [R](https://www.r-project.org/), un lenguaje de programación orientado al análisis de datos y con amplias capacidades de procesamiento geoespacial. El código fuente de estos programas se encuentra en <https://github.com/mapa-agropecuario-forestal/2020/tree/main/programas>.
+
+Los programas se ejecutaron en un contenedor [Docker](https://www.docker.com/). El uso de contenedores facilita el desarrollo, la implementación y el mantenimiento de aplicaciones. Entre sus ventajas, pueden mencionarse:
+
+-   **Portabilidad**: Los contenedores incluyen todas las dependencias necesarias (bibliotecas, configuraciones y herramientas), lo que permite que la aplicación se ejecute de manera consistente en cualquier entorno, ya sea local, en servidores o en la nube.
+
+-   **Aislamiento**: Cada contenedor se ejecuta de forma independiente y aislada del sistema operativo anfitrión y de otros contenedores, evitando conflictos de dependencias o configuraciones entre aplicaciones.
+
+-   **Control de versiones**: Docker permite versionar las imágenes de contenedores, lo que facilita la reversión a versiones anteriores en caso de problemas. También puedes etiquetar versiones específicas de tu aplicación para un mejor control.
+
+En general, los contenedores facilitan la reproducibilidad de la solución implementada: al utilizar los mismos datos y los mismos programas se obtienen los mismos resultados. El archivo [Dockerfile](https://github.com/mapa-agropecuario-forestal/2020/blob/main/Dockerfile) contiene la especificación de los paquetes de R que se necesitan, con sus respectivas versiones.
+
+Las instrucciones necesarias para el uso del contenedor Docker se incluyen en el archivo [README.md](https://github.com/mapa-agropecuario-forestal/2020/blob/main/README.md#manejo-del-contenedor-docker) del repositorio GitHub.
+
+### Flujo de trabajo
+
+Para cada uno de los pasos del flujo de trabajo, se brinda una descripción y se especifican el programa correspondiente y los directorios de datos de entrada y salida.
+
+#### 1. Remuestreo de capas raster
+
+Este paso se aplicó a las capas de entrada tipo raster para homogenizarlas en una misma cuadrícula de referencia. Así, se garantiza que todas las capas raster tengan la misma resolución y los mismos límites.
+
+1.  Se rasterizó una capa vectorial del contorno de Costa Rica con una resolución determinada (ej. 10 m). Se excluyó la Isla del Coco. Esta es la cuadrícula de referencia.
+2.  Las capas raster de entrada se remuestrearon (con la función `resample()`) con base en la cuadrícula de referencia. De esta manera, todas tienen la misma resolución y los mismos límites.
+3.  Las capas raster remuestreadas se recortaron (*crop*) con base en la capa vectorial del contorno de Costa Rica.
+
+##### Programas
+
+[remuestreo.R](https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/remuestreo.R)
+
+##### Entradas
+
+**Directorio de capas raster originales**\
+'datos/originales/raster' (este directorio no se incluyó en el repositorio en GitHub debido a que contiene archivos muy grandes y además no se ha solicitado autorización para compartirlos)
+
+##### Salidas
+
+**Directorio de capas remuestreadas**\
+<https://github.com/mapa-agropecuario-forestal/2020/tree/main/datos/procesados/remuestreados>
+
+#### 2. Rasterización de capas vectoriales
+
+Este paso se aplicó a las capas de entrada tipo vectorial para convertirlas a formato raster de acuerdo con una misma cuadrícula de referencia.
+
+1.  Se rasterizó una capa vectorial del contorno de Costa Rica con una resolución determinada (ej. 10 m). Se excluyó la Isla del Coco. Esta es la cuadrícula de referencia.
+2.  Se repararon las geometrías no válidas de las capas vectoriales de entrada (con la función `st_make_valid()`).
+3.  Las capas vectoriales de entrada se rasterizaron (con la función `rasterize()`) con base en la cuadrícula de referencia. De esta manera, todas tienen la misma resolución y los mismos límites.
+4.  Las capas rasterizadas se reproyectaron al SRS CR05/CRTM05.
+5.  Las capas raster rasterizadas se recortaron (*crop*) con base en la capa vectorial del contorno de Costa Rica.
+
+##### Programa
+
+[rasterizacion.R](https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/rasterizacion.R)
+
+##### Entradas
+
+**Directorio de capas vectoriales originales**\
+'datos/originales/vectoriales' (este directorio no se incluyó en el repositorio en GitHub debido a que contiene archivos muy grandes y además no se ha solicitado autorización para compartirlos)
+
+##### Salidas
+
+**Directorio de capas rasterizadas**\
+<https://github.com/mapa-agropecuario-forestal/2020/tree/main/datos/procesados/rasterizados>
+
+#### 3. Combinación de capas remuestreadas y rasterizadas
+
+En este punto, todas las capas de entrada (raster y vectoriales) deben estar en formato raster y con la misma resolución y límites. Seguidamente, se combinaron (con la función `merge()`) comenzando con la capa de menor prioridad y sobreponiendo la siguiente capa, hasta procesarlas todas.
+
+La siguiente lista muestra el resultado de la combinación, comenzando por la capa de mayor prioridad (la que se ve primero en el mapa).
+
+1.  Red Vial (MOPT)
+2.  Parque nacional, reserva biológica o monumento natural (SINAC)
+3.  Humedal (SINAC)
+4.  Patrimonio natural del estado (SINAC)
+5.  Caña (LAICA)
+6.  Banano (CORBANA)
+7.  Café (ICAFE)
+8.  Cacao (IICA)
+9.  Pasto (MOCUPP-UCR)
+10. Palma (MOCUPP-PRIAS)
+11. Piña (MOCUPP-PRIAS)
+12. Cultivo (IGN)
+13. Páramo (REDD+)
+14. Plantación forestal (FONAFIFO)
+15. Cobertura forestal (SINAC)
+16. Cuerpo de agua (REDD+)
+17. Pasto (REDD+)
+18. Cultivo anual (REDD+)
+19. Cultivo permanente (REDD+)
+20. Bosque (REDD+)
+21. Suelo desnudo (REDD+)
+22. Zona urbana (REDD+)
+23. Sin información (REDD+)
+
+##### Programa
+
+[combinacion.R](https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/combinacion.R)
+
+##### Entradas
+
+**Directorio de capas remuestreadas**\
+<https://github.com/mapa-agropecuario-forestal/2020/tree/main/datos/procesados/remuestreados>
+
+**Directorio de capas rasterizadas**\
+<https://github.com/mapa-agropecuario-forestal/2020/tree/main/datos/procesados/rasterizados>
+
+##### Salidas
+
+**Archivo combinado**\
+`salidas/mapa-agropecuario-forestal-2020-inicial.tif` (este archivo se sustituyó por su versión comprimida que se explica en el paso 5)
+
+#### 4. Reclasificación del archivo combinado
+
+Algunas de las capas del archivo combinado pueden unirse, por lo que en este paso se ejecutó una reclasificación (con la función `classify()`) que generó el conjunto final de capas:
+
+1.  Red Vial (MOPT)
+2.  Parque nacional, reserva biológica o monumento natural (SINAC)
+3.  Humedal (SINAC + REDD+)
+4.  Patrimonio natural del estado (SINAC)
+5.  Caña (LAICA)
+6.  Banano (CORBANA)
+7.  Café (ICAFE)
+8.  Cacao (IICA)
+9.  Pasto (MOCUPP-UCR + REDD+)
+10. Palma (MOCUPP-PRIAS)
+11. Piña (MOCUPP-PRIAS)
+12. Cultivo (IGN + REDD+)
+13. Páramo (REDD+)
+14. Plantación forestal (FONAFIFO)
+15. Cobertura forestal (SINAC + REDD+)
+16. Suelo desnudo (REDD+)
+17. Zona urbana (REDD+)
+18. Sin información (REDD+)
+
+##### Programa
+
+[reclasificacion.R](https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/reclasificacion.R)
+
+##### Entradas
+
+**Archivo combinado**\
+`salidas/mapa-agropecuario-forestal-2020-inicial.tif`
+
+##### Salidas
+
+**Archivo reclasificado**\
+`salidas/mapa-agropecuario-forestal-2020-inicial-reclasificado.tif` (este archivo se sustituyó por su versión comprimida que se explica en el paso 5)
+
+#### 5. Compresión del archivo reclasificado
+
+Para reducir su tamaño, el archivo reclasificado se comprimió (con el comando `gdal_translate`) de la biblioteca [GDAL](https://gdal.org/).
+
+##### Programa
+
+[compresion-salidas.sh](https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/compresion-salidas.sh)
+
+##### Entradas
+
+**Archivo reclasificado**\
+`salidas/mapa-agropecuario-forestal-2020-inicial-reclasificado.tif`
+
+##### Salidas
+
+**Archivo comprimido**\
+<https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.tif>
+
+#### 6. Generación de estadísticas
+
+En este último paso, se genera un archivo CSV con estadísticas relacionadas con el área ocupada por cada clase de cobertura.
+
+##### Programa
+
+[generacion-estadisticas.R](https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-estadisticas.R)
+
+##### Entradas
+
+**Archivo comprimido**\
+<https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.tif>
+
+##### Salidas
+
+**Archivo con estadísticas**\
+<https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas.csv>
