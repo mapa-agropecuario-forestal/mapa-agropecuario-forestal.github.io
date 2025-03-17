@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="introducción" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introducción">Introducción</h2>
 <p>El mapa correspondiente al año 2020 se muestra en la <a href="#fig-mapa-agropecuario-forestal-2020" class="quarto-xref">Figura&nbsp;<span>1</span></a>. El repositorio con el código fuente y la documentación está disponible en <a href="https://github.com/mapa-agropecuario-forestal/2020">https://github.com/mapa-agropecuario-forestal/2020</a>.</p>
-<div id="fig-mapa-agropecuario-forestal-2020" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020" data-fig-align="center">
+<div id="fig-mapa-agropecuario-forestal-2020" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mapa-agropecuario-forestal-2020-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;1: Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020."><img src="https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020"></a>
@@ -187,14 +187,21 @@ Figura&nbsp;1: Mapa de referencia de tierras agropecuarias y cobertura forestal 
 </figcaption>
 </figure>
 </div>
+<p>Seguidamente, se listan los enlaces a los archivos correspondientes al mapa (<code>.tif</code>), los estilos (<code>.qmd</code>) y las estadísticas (<code>.csv</code>), cada uno de los cuales puede descargarse con el botón <em>Download raw file</em>, ubicado en la parte superior derecha de la pantalla.</p>
+<ul>
+<li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.tif">Mapa</a></li>
+<li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.qml">Estilos</a></li>
+<li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas.csv">Estadísticas</a></li>
+</ul>
+<p>En las secciones siguientes, se describen los datos utilizados y procesamiento ejecutado para generar el mapa.</p>
 </section>
 <section id="datos" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="datos">Datos</h2>
 <p>El mapa se elaboró a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-668ddc3cd99567286a13" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-668ddc3cd99567286a13">{"x":{"filter":"none","vertical":false,"data":[["A_CACAO_IICA.shp","areas-silvestres-protegidas.gpkg","Cobertura forestal 2021.shp","cultivo-cafe-2017-2018.gpkg","cultivo-cana-2020.gpkg","cultivo-palma-2019.gpkg","cultivo-pastos-2019.gpkg","cultivo-pastos-2020.gpkg","cultivo-pina-2019.gpkg","cultivos-2017.gpkg","fincas_Bananeras.shp","MC21_RECLASIFICADO_IPCC_9_7_2024.tif","patrimonio-natural-estado.gpkg","plantacion-forestal-2008-2020.gpkg","Red_Vial_Nacional.shp","registro-nacional-humedales.gpkg"],["IICA","SINAC (SNIT)","SINAC","ICAFE","LAICA","MOCUPP-PRIAS (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-PRIAS (SNIT)","IGN","CORBANA","Secretaría REDD+","SINAC (SNIT)","FONAFIFO","MOPT","SINAC (SNIT)"],["Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Raster","Vectorial","Vectorial","Vectorial","Vectorial"],["","","","","Se generó al fusionar archivos de varias regiones","","","","","","","Contiene varias capas (zonas urbanas, suelo desnudo, bosques, cuerpos de agua, etc.)","","Se generó al fusionar archivos de varias regiones","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Archivo<\/th>\n      <th>Fuente<\/th>\n      <th>Tipo<\/th>\n      <th>Comentarios<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":16,"language":{"url":"//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"},"columnDefs":[{"name":"Archivo","targets":0},{"name":"Fuente","targets":1},{"name":"Tipo","targets":2},{"name":"Comentarios","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,16,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e4d9749e782a60260d5d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e4d9749e782a60260d5d">{"x":{"filter":"none","vertical":false,"data":[["A_CACAO_IICA.shp","areas-silvestres-protegidas.gpkg","Cobertura forestal 2021.shp","cultivo-cafe-2017-2018.gpkg","cultivo-cana-2020.gpkg","cultivo-palma-2019.gpkg","cultivo-pastos-2019.gpkg","cultivo-pastos-2020.gpkg","cultivo-pina-2019.gpkg","cultivos-2017.gpkg","fincas_Bananeras.shp","MC21_RECLASIFICADO_IPCC_9_7_2024.tif","patrimonio-natural-estado.gpkg","plantacion-forestal-2008-2020.gpkg","Red_Vial_Nacional.shp","registro-nacional-humedales.gpkg"],["IICA","SINAC (SNIT)","SINAC","ICAFE","LAICA","MOCUPP-PRIAS (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-PRIAS (SNIT)","IGN","CORBANA","Secretaría REDD+","SINAC (SNIT)","FONAFIFO","MOPT","SINAC (SNIT)"],["Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Raster","Vectorial","Vectorial","Vectorial","Vectorial"],["","","","","Se generó al fusionar archivos de varias regiones","","","","","","","Contiene varias capas (zonas urbanas, suelo desnudo, bosques, cuerpos de agua, etc.)","","Se generó al fusionar archivos de varias regiones","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Archivo<\/th>\n      <th>Fuente<\/th>\n      <th>Tipo<\/th>\n      <th>Comentarios<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":16,"language":{"url":"//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"},"columnDefs":[{"name":"Archivo","targets":0},{"name":"Fuente","targets":1},{"name":"Tipo","targets":2},{"name":"Comentarios","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,16,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Algunos archivos se descargaron de servicios web publicados por diferentes instituciones y presentados en el <a href="https://www.snitcr.go.cr/">Sistema Naional de Información Territorial (SNIT)</a>. Otros fueron entregados directamente por las instituciones y las cámaras de agricultores.</p>
@@ -848,7 +855,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

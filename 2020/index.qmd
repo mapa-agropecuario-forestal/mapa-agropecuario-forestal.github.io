@@ -15,6 +15,14 @@ El mapa correspondiente al año 2020 se muestra en la @fig-mapa-agropecuario-for
 
 ![Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png){#fig-mapa-agropecuario-forestal-2020 .lightbox fig-alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020" fig-align="center"}
 
+Seguidamente, se listan los enlaces a los archivos correspondientes al mapa (`.tif`), los estilos (`.qmd`) y las estadísticas (`.csv`), cada uno de los cuales puede descargarse con el botón *Download raw file*, ubicado en la parte superior derecha de la pantalla.
+
+- [Mapa](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.tif)
+- [Estilos](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.qml)
+- [Estadísticas](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas.csv)
+
+En las secciones siguientes, se describen los datos utilizados y procesamiento ejecutado para generar el mapa.
+
 ## Datos {.unnumbered}
 
 El mapa se elaboró a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.

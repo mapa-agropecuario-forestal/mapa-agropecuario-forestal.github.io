@@ -8,6 +8,6 @@ El mapa más actualizado, correspondiente al año 2020, se muestra en la @fig-ma
 
 Los mapas son el producto de la combinación de capas geoespaciales de cultivos, áreas silvestres protegidas y humedales, las cuales fueron facilitadas por instituciones estatales, centros de investigación y cámaras de agricultores.
 
-Se han generado mapas para los años:
+Se han generado mapas para los años que se listan a continuación. Cada enlace conduce a una página con los detalles del mapa de cada año.
 
--   [2020](2020/index.qmd)
+- [2020](2020/index.qmd)
