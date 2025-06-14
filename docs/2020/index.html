@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="introducción" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introducción">Introducción</h2>
 <p>El mapa correspondiente al año 2020 se muestra en la <a href="#fig-mapa-agropecuario-forestal-2020" class="quarto-xref">Figura&nbsp;<span>1</span></a>. El repositorio con el código fuente y la documentación está disponible en <a href="https://github.com/mapa-agropecuario-forestal/2020">https://github.com/mapa-agropecuario-forestal/2020</a>.</p>
-<div id="fig-mapa-agropecuario-forestal-2020" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020">
+<div id="fig-mapa-agropecuario-forestal-2020" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mapa-agropecuario-forestal-2020-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;1: Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020."><img src="https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020"></a>
@@ -193,22 +193,38 @@ Figura&nbsp;1: Mapa de referencia de tierras agropecuarias y cobertura forestal 
 <li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.qml">Estilos</a></li>
 <li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas.csv">Estadísticas</a></li>
 </ul>
-<p>En las secciones siguientes, se describen los datos utilizados y procesamiento ejecutado para generar el mapa.</p>
+<p>Adicionalmente, se generó un mapa sin la capa de humedales, el cual se presenta en la <a href="#fig-mapa-agropecuario-forestal-2020-sin-humedales" class="quarto-xref">Figura&nbsp;<span>2</span></a>.</p>
+<div id="fig-mapa-agropecuario-forestal-2020-sin-humedales" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales)" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mapa-agropecuario-forestal-2020-sin-humedales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;2: Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales)."><img src="https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales)"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mapa-agropecuario-forestal-2020-sin-humedales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales).
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.tif">Mapa</a></li>
+<li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.qml">Estilos</a></li>
+<li><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas-sin-humedales.csv">Estadísticas</a></li>
+</ul>
+<p>En las secciones siguientes, se describen los datos utilizados y procesamiento ejecutado para generar los mapas.</p>
 </section>
 <section id="datos" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="datos">Datos</h2>
-<p>El mapa se elaboró a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.</p>
+<p>Los mapas se elaboraron a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-e4d9749e782a60260d5d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e4d9749e782a60260d5d">{"x":{"filter":"none","vertical":false,"data":[["A_CACAO_IICA.shp","areas-silvestres-protegidas.gpkg","Cobertura forestal 2021.shp","cultivo-cafe-2017-2018.gpkg","cultivo-cana-2020.gpkg","cultivo-palma-2019.gpkg","cultivo-pastos-2019.gpkg","cultivo-pastos-2020.gpkg","cultivo-pina-2019.gpkg","cultivos-2017.gpkg","fincas_Bananeras.shp","MC21_RECLASIFICADO_IPCC_9_7_2024.tif","patrimonio-natural-estado.gpkg","plantacion-forestal-2008-2020.gpkg","Red_Vial_Nacional.shp","registro-nacional-humedales.gpkg"],["IICA","SINAC (SNIT)","SINAC","ICAFE","LAICA","MOCUPP-PRIAS (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-PRIAS (SNIT)","IGN","CORBANA","Secretaría REDD+","SINAC (SNIT)","FONAFIFO","MOPT","SINAC (SNIT)"],["Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Raster","Vectorial","Vectorial","Vectorial","Vectorial"],["","","","","Se generó al fusionar archivos de varias regiones","","","","","","","Contiene varias capas (zonas urbanas, suelo desnudo, bosques, cuerpos de agua, etc.)","","Se generó al fusionar archivos de varias regiones","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Archivo<\/th>\n      <th>Fuente<\/th>\n      <th>Tipo<\/th>\n      <th>Comentarios<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":16,"language":{"url":"//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"},"columnDefs":[{"name":"Archivo","targets":0},{"name":"Fuente","targets":1},{"name":"Tipo","targets":2},{"name":"Comentarios","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,16,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-99cbe57102f20c5f79ac" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-99cbe57102f20c5f79ac">{"x":{"filter":"none","vertical":false,"data":[["A_CACAO_IICA.shp","areas-silvestres-protegidas.gpkg","Cobertura forestal 2021.shp","cultivo-cafe-2017-2018.gpkg","cultivo-cana-2020.gpkg","cultivo-palma-2019.gpkg","cultivo-pastos-2019.gpkg","cultivo-pastos-2020.gpkg","cultivo-pina-2019.gpkg","cultivos-2017.gpkg","fincas_Bananeras.shp","MC21_RECLASIFICADO_IPCC_9_7_2024.tif","patrimonio-natural-estado.gpkg","plantacion-forestal-2008-2020.gpkg","Red_Vial_Nacional.shp","registro-nacional-humedales.gpkg"],["IICA","SINAC (SNIT)","SINAC","ICAFE","LAICA","MOCUPP-PRIAS (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-PRIAS (SNIT)","IGN","CORBANA","Secretaría REDD+","SINAC (SNIT)","FONAFIFO","MOPT","SINAC (SNIT)"],["Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Raster","Vectorial","Vectorial","Vectorial","Vectorial"],["","","","","Se generó al fusionar archivos de varias regiones","","","","","","","Contiene varias capas (zonas urbanas, suelo desnudo, bosques, cuerpos de agua, etc.)","","Se generó al fusionar archivos de varias regiones","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Archivo<\/th>\n      <th>Fuente<\/th>\n      <th>Tipo<\/th>\n      <th>Comentarios<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":16,"language":{"url":"//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"},"columnDefs":[{"name":"Archivo","targets":0},{"name":"Fuente","targets":1},{"name":"Tipo","targets":2},{"name":"Comentarios","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,16,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Algunos archivos se descargaron de servicios web publicados por diferentes instituciones y presentados en el <a href="https://www.snitcr.go.cr/">Sistema Naional de Información Territorial (SNIT)</a>. Otros fueron entregados directamente por las instituciones y las cámaras de agricultores.</p>
 </section>
 <section id="procesamiento" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="procesamiento">Procesamiento</h2>
-<p>Los datos de entrada se procesaron en un flujo de trabajo de seis pasos, el cual se esquematiza en la <a href="#fig-procesamiento" class="quarto-xref">Figura&nbsp;<span>2</span></a>.</p>
+<p>Los datos de entrada se procesaron en un flujo de trabajo de seis pasos, el cual se esquematiza en la <a href="#fig-procesamiento" class="quarto-xref">Figura&nbsp;<span>3</span></a>.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-procesamiento" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -233,21 +249,14 @@ Figura&nbsp;1: Mapa de referencia de tierras agropecuarias y cobertura forestal 
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-procesamiento-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2: Procesamiento de datos.
+Figura&nbsp;3: Procesamiento de datos.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Este flujo de trabajo se implementó a través de un conjunto de programas desarrollados en <a href="https://www.r-project.org/">R</a>, un lenguaje de programación orientado al análisis de datos y con amplias capacidades de procesamiento geoespacial. El código fuente de estos programas se encuentra en <a href="https://github.com/mapa-agropecuario-forestal/2020/tree/main/programas" class="uri">https://github.com/mapa-agropecuario-forestal/2020/tree/main/programas</a>.</p>
-<p>Los programas se ejecutaron en un contenedor <a href="https://www.docker.com/">Docker</a>. El uso de contenedores facilita el desarrollo, la implementación y el mantenimiento de aplicaciones. Entre sus ventajas, pueden mencionarse:</p>
-<ul>
-<li><p><strong>Portabilidad</strong>: Los contenedores incluyen todas las dependencias necesarias (bibliotecas, configuraciones y herramientas), lo que permite que la aplicación se ejecute de manera consistente en cualquier entorno, ya sea local, en servidores o en la nube.</p></li>
-<li><p><strong>Aislamiento</strong>: Cada contenedor se ejecuta de forma independiente y aislada del sistema operativo anfitrión y de otros contenedores, evitando conflictos de dependencias o configuraciones entre aplicaciones.</p></li>
-<li><p><strong>Control de versiones</strong>: Docker permite versionar las imágenes de contenedores, lo que facilita la reversión a versiones anteriores en caso de problemas. También puedes etiquetar versiones específicas de tu aplicación para un mejor control.</p></li>
-</ul>
-<p>En general, los contenedores facilitan la reproducibilidad de la solución implementada: al utilizar los mismos datos y los mismos programas se obtienen los mismos resultados. El archivo <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/Dockerfile">Dockerfile</a> contiene la especificación de los paquetes de R que se necesitan, con sus respectivas versiones.</p>
-<p>Las instrucciones necesarias para el uso del contenedor Docker se incluyen en el archivo <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/README.md#manejo-del-contenedor-docker">README.md</a> del repositorio GitHub.</p>
+<p>Los programas se ejecutaron en un contenedor <a href="https://www.docker.com/">Docker</a>. Las instrucciones necesarias para su manejo se incluyen en el archivo <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/README.md#manejo-del-contenedor-docker">README.md</a> del repositorio GitHub.</p>
 <section id="flujo-de-trabajo" class="level3">
 <h3 class="anchored" data-anchor-id="flujo-de-trabajo">Flujo de trabajo</h3>
 <p>Para cada uno de los pasos del flujo de trabajo, se brinda una descripción y se especifican el programa correspondiente y los directorios de datos de entrada y salida.</p>
@@ -855,7 +864,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

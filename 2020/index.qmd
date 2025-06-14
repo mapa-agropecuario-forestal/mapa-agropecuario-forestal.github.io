@@ -21,11 +21,19 @@ Seguidamente, se listan los enlaces a los archivos correspondientes al mapa (`.t
 - [Estilos](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.qml)
 - [Estadísticas](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas.csv)
 
-En las secciones siguientes, se describen los datos utilizados y procesamiento ejecutado para generar el mapa.
+Adicionalmente, se generó un mapa sin la capa de humedales, el cual se presenta en la @fig-mapa-agropecuario-forestal-2020-sin-humedales.
+
+![Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales).](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.png){#fig-mapa-agropecuario-forestal-2020-sin-humedales .lightbox fig-alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales)" fig-align="center"}
+
+- [Mapa](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.tif)
+- [Estilos](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.qml)
+- [Estadísticas](https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas-sin-humedales.csv)
+
+En las secciones siguientes, se describen los datos utilizados y procesamiento ejecutado para generar los mapas.
 
 ## Datos {.unnumbered}
 
-El mapa se elaboró a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.
+Los mapas se elaboraron a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.
 
 ```{r}
 #| label: definicion-fuentes-datos
@@ -110,17 +118,7 @@ flowchart TB
 
 Este flujo de trabajo se implementó a través de un conjunto de programas desarrollados en [R](https://www.r-project.org/), un lenguaje de programación orientado al análisis de datos y con amplias capacidades de procesamiento geoespacial. El código fuente de estos programas se encuentra en <https://github.com/mapa-agropecuario-forestal/2020/tree/main/programas>.
 
-Los programas se ejecutaron en un contenedor [Docker](https://www.docker.com/). El uso de contenedores facilita el desarrollo, la implementación y el mantenimiento de aplicaciones. Entre sus ventajas, pueden mencionarse:
-
--   **Portabilidad**: Los contenedores incluyen todas las dependencias necesarias (bibliotecas, configuraciones y herramientas), lo que permite que la aplicación se ejecute de manera consistente en cualquier entorno, ya sea local, en servidores o en la nube.
-
--   **Aislamiento**: Cada contenedor se ejecuta de forma independiente y aislada del sistema operativo anfitrión y de otros contenedores, evitando conflictos de dependencias o configuraciones entre aplicaciones.
-
--   **Control de versiones**: Docker permite versionar las imágenes de contenedores, lo que facilita la reversión a versiones anteriores en caso de problemas. También puedes etiquetar versiones específicas de tu aplicación para un mejor control.
-
-En general, los contenedores facilitan la reproducibilidad de la solución implementada: al utilizar los mismos datos y los mismos programas se obtienen los mismos resultados. El archivo [Dockerfile](https://github.com/mapa-agropecuario-forestal/2020/blob/main/Dockerfile) contiene la especificación de los paquetes de R que se necesitan, con sus respectivas versiones.
-
-Las instrucciones necesarias para el uso del contenedor Docker se incluyen en el archivo [README.md](https://github.com/mapa-agropecuario-forestal/2020/blob/main/README.md#manejo-del-contenedor-docker) del repositorio GitHub.
+Los programas se ejecutaron en un contenedor [Docker](https://www.docker.com/). Las instrucciones necesarias para su manejo se incluyen en el archivo [README.md](https://github.com/mapa-agropecuario-forestal/2020/blob/main/README.md#manejo-del-contenedor-docker) del repositorio GitHub.
 
 ### Flujo de trabajo
 

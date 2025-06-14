@@ -6,6 +6,10 @@ El mapa más actualizado, correspondiente al año 2020, se muestra en la @fig-ma
 
 ![Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020.png){#fig-mapa-agropecuario-forestal-2020 .lightbox fig-alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020" fig-align="center"}
 
+Para el mismo año se generó un mapa sin la capa de humedales, el cual se muestra en la @fig-mapa-agropecuario-forestal-2020-sin-humedales.
+
+![Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales).](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-sin-humedales.png){#fig-mapa-agropecuario-forestal-2020-sin-humedales .lightbox fig-alt="Mapa de referencia de tierras agropecuarias y cobertura forestal de Costa Rica para el año 2020 (sin humedales)" fig-align="center"}
+
 Los mapas son el producto de la combinación de capas geoespaciales de cultivos, áreas silvestres protegidas y humedales, las cuales fueron facilitadas por instituciones estatales, centros de investigación y cámaras de agricultores.
 
 Se han generado mapas para los años que se listan a continuación. Cada enlace conduce a una página con los detalles del mapa de cada año.
