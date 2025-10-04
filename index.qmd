@@ -8,6 +8,8 @@ Para el año 2020, se generaron las siguientes versiones del mapa:
 
 ![Mapa agropecuario y forestal 2020 versión 2.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-v2.png){#fig-mapa-agropecuario-forestal-2020-v2 .lightbox fig-alt="Mapa agropecuario y forestal 2020 versión 2" fig-align="center"}
 
+![Mapa agropecuario y forestal 2020 versión 3.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-v3.png){#fig-mapa-agropecuario-forestal-2020-v3 .lightbox fig-alt="Mapa agropecuario y forestal 2020 versión 3" fig-align="center"}
+
 Los mapas son el producto de la combinación de capas geoespaciales de cultivos, áreas silvestres protegidas y humedales, las cuales fueron facilitadas por instituciones estatales, centros de investigación y cámaras de agricultores.
 
 Se han generado mapas para los años que se listan a continuación. Cada enlace conduce a una página con los detalles del mapa de cada año.
