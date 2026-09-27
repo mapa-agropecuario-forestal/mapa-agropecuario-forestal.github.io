@@ -141,6 +141,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#versiones-del-mapa" id="toc-versiones-del-mapa" class="nav-link" data-scroll-target="#versiones-del-mapa">Versiones del mapa</a></li>
   <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
   <li><a href="#procesamiento" id="toc-procesamiento" class="nav-link" data-scroll-target="#procesamiento">Procesamiento</a>
   <ul class="collapse">
@@ -175,20 +176,60 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="unnumbered anchored" data-anchor-id="introducción">Introducción</h2>
 <p>El repositorio con el código fuente y la documentación está disponible en <a href="https://github.com/mapa-agropecuario-forestal/2020">https://github.com/mapa-agropecuario-forestal/2020</a>. En las secciones siguientes, se describen los datos utilizados y procesamiento ejecutado para generar los mapas.</p>
 </section>
+<section id="versiones-del-mapa" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="versiones-del-mapa">Versiones del mapa</h2>
+<p>Se han generado cuatro versiones del mapa. Cada versión nueva se produjo con copias <code>-vN</code> de los programas que cambiaron; los programas sin sufijo corresponden a la versión 1.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Versión</th>
+<th>Fecha</th>
+<th>Cambio respecto a la versión anterior</th>
+<th>Archivos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Marzo de 2025</td>
+<td>Versión inicial, con 18 clases.</td>
+<td><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020.tif">TIF</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-v1.png">PNG</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas.csv">Estadísticas</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/qgis/bak/mapa-agropecuario-forestal-2020-v1.qml">Estilo QGIS</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Setiembre de 2025</td>
+<td>Se omiten los humedales (Registro Nacional de Humedales y cuerpos de agua REDD+).</td>
+<td><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-v2.tif">TIF</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-v2.png">PNG</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas-v2.csv">Estadísticas</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/qgis/bak/mapa-agropecuario-forestal-2020-v2.qml">Estilo QGIS</a></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Octubre de 2025</td>
+<td>Se reincorporan los cuerpos de agua REDD+ (clase 3, “Cuerpo de agua”). Es la versión publicada en el SNIT.</td>
+<td><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-v3.tif">TIF</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-v3.png">PNG</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas-v3.csv">Estadísticas</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/qgis/bak/mapa-agropecuario-forestal-2020-v3.qml">Estilo QGIS</a></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Setiembre de 2026</td>
+<td>Se omiten las capas máscara de áreas silvestres protegidas (clase 2) y Patrimonio Natural del Estado (clase 4), a solicitud de MAG-MINAE, luego de detectarse que la capa de PNE de SINAC usada en el mapa fue reposicionada por SINAC en versiones posteriores. Los espacios que ocupaban se llenan con la jerarquía de las demás capas. Ver el <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/documentacion/analisis-desplazamiento-asp-pne-2026-09.md">informe del análisis</a> y la <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/verificacion-v4.R">verificación respecto a la versión 3</a>.</td>
+<td><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-v4.tif">TIF</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/mapa-agropecuario-forestal-2020-v4.png">PNG</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/estadisticas-v4.csv">Estadísticas</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/qgis/bak/mapa-agropecuario-forestal-2020-v4.qml">Estilo QGIS</a> · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/salidas/transicion-v3-v4.csv">Transición v3 → v4</a></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="datos" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="datos">Datos</h2>
 <p>Los mapas se elaboraron a partir de un conjunto de datos de entrada contenidos en archivos geoespaciales, vectoriales y raster, los cuales se listan seguidamente.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-7643bbe58fb2aab575f3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7643bbe58fb2aab575f3">{"x":{"filter":"none","vertical":false,"data":[["A_CACAO_IICA.shp","areas-silvestres-protegidas.gpkg","Cobertura forestal 2021.shp","cultivo-cafe-2017-2018.gpkg","cultivo-cana-2020.gpkg","cultivo-palma-2019.gpkg","cultivo-pastos-2019.gpkg","cultivo-pastos-2020.gpkg","cultivo-pina-2019.gpkg","cultivos-2017.gpkg","fincas_Bananeras.shp","MC21_RECLASIFICADO_IPCC_9_7_2024.tif","patrimonio-natural-estado.gpkg","plantacion-forestal-2008-2020.gpkg","Red_Vial_Nacional.shp","registro-nacional-humedales.gpkg"],["IICA","SINAC (SNIT)","SINAC","ICAFE","LAICA","MOCUPP-PRIAS (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-PRIAS (SNIT)","IGN","CORBANA","Secretaría REDD+","SINAC (SNIT)","FONAFIFO","MOPT","SINAC (SNIT)"],["Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Raster","Vectorial","Vectorial","Vectorial","Vectorial"],["","","","","Se generó al fusionar archivos de varias regiones","","","","","","","Contiene varias capas (zonas urbanas, suelo desnudo, bosques, cuerpos de agua, etc.)","","Se generó al fusionar archivos de varias regiones","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Archivo<\/th>\n      <th>Fuente<\/th>\n      <th>Tipo<\/th>\n      <th>Comentarios<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":16,"language":{"url":"//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"},"columnDefs":[{"name":"Archivo","targets":0},{"name":"Fuente","targets":1},{"name":"Tipo","targets":2},{"name":"Comentarios","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,16,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-81f152431465c22f02a4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-81f152431465c22f02a4">{"x":{"filter":"none","vertical":false,"data":[["A_CACAO_IICA.shp","areas-silvestres-protegidas.gpkg","Cobertura forestal 2021.shp","cultivo-cafe-2017-2018.gpkg","cultivo-cana-2020.gpkg","cultivo-palma-2019.gpkg","cultivo-pastos-2019.gpkg","cultivo-pastos-2020.gpkg","cultivo-pina-2019.gpkg","cultivos-2017.gpkg","fincas_Bananeras.shp","MC21_RECLASIFICADO_IPCC_9_7_2024.tif","patrimonio-natural-estado.gpkg","plantacion-forestal-2008-2020.gpkg","Red_Vial_Nacional.shp","registro-nacional-humedales.gpkg"],["IICA","SINAC (SNIT)","SINAC","ICAFE","LAICA","MOCUPP-PRIAS (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-UCR (SNIT)","MOCUPP-PRIAS (SNIT)","IGN","CORBANA","Secretaría REDD+","SINAC (SNIT)","FONAFIFO","MOPT","SINAC (SNIT)"],["Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Vectorial","Raster","Vectorial","Vectorial","Vectorial","Vectorial"],["","Descargada del WFS de SINAC (SIREFOR) en mayo de 2024. Se omite a partir de la versión 4","","","Se generó al fusionar archivos de varias regiones","","","","","","","Contiene varias capas (zonas urbanas, suelo desnudo, bosques, cuerpos de agua, etc.)","Descargada del WFS de SINAC (SIREFOR) en febrero de 2025; SINAC reposicionó después parte de sus polígonos. Se omite a partir de la versión 4","Se generó al fusionar archivos de varias regiones","","Se omite a partir de la versión 2"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Archivo<\/th>\n      <th>Fuente<\/th>\n      <th>Tipo<\/th>\n      <th>Comentarios<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":16,"language":{"url":"//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"},"columnDefs":[{"name":"Archivo","targets":0},{"name":"Fuente","targets":1},{"name":"Tipo","targets":2},{"name":"Comentarios","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,16,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Algunos archivos se descargaron de servicios web publicados por diferentes instituciones y presentados en el <a href="https://www.snitcr.go.cr/">Sistema Naional de Información Territorial (SNIT)</a>. Otros fueron entregados directamente por las instituciones y las cámaras de agricultores.</p>
 </section>
 <section id="procesamiento" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="procesamiento">Procesamiento</h2>
-<p>Los datos de entrada se procesaron en un flujo de trabajo de seis pasos, el cual se esquematiza en la <a href="#fig-procesamiento" class="quarto-xref">Figura&nbsp;<span>1</span></a>.</p>
+<p>Los datos de entrada se procesaron en un flujo de trabajo de seis pasos, el cual se esquematiza en la <a href="#fig-procesamiento" class="quarto-xref">Figura&nbsp;<span>1</span></a>. La descripción siguiente corresponde a la versión 1 del mapa. Las versiones posteriores repiten los pasos 3 a 6 con copias de los programas (<code>combinacion-vN.R</code>, <code>reclasificacion-vN.R</code>, <code>compresion-salidas-vN.sh</code>, <code>generacion-estadisticas-vN.R</code>) que omiten capas: la versión 2 omite el Registro Nacional de Humedales y los cuerpos de agua REDD+; la versión 3 reincorpora los cuerpos de agua REDD+; la versión 4 omite además las áreas silvestres protegidas y el Patrimonio Natural del Estado. La versión 4 agrega tres pasos: generación de la tabla de atributos del raster (<a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-tabla-atributos-v4.R">generacion-tabla-atributos-v4.R</a>), generación del archivo PNG (<a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-png-v4.R">generacion-png-v4.R</a>) y verificación respecto a la versión 3 (<a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/verificacion-v4.R">verificacion-v4.R</a>).</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-procesamiento" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -303,7 +344,7 @@ Figura&nbsp;1: Procesamiento de datos.
 </ol>
 <section id="programa-1" class="level5">
 <h5 class="anchored" data-anchor-id="programa-1">Programa</h5>
-<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/combinacion.R">combinacion.R</a></p>
+<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/combinacion.R">combinacion.R</a> (versión 1) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/combinacion-v2.R">combinacion-v2.R</a> (versión 2) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/combinacion-v3.R">combinacion-v3.R</a> (versión 3) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/combinacion-v4.R">combinacion-v4.R</a> (versión 4)</p>
 </section>
 <section id="entradas-2" class="level5">
 <h5 class="anchored" data-anchor-id="entradas-2">Entradas</h5>
@@ -343,7 +384,7 @@ Figura&nbsp;1: Procesamiento de datos.
 </ol>
 <section id="programa-2" class="level5">
 <h5 class="anchored" data-anchor-id="programa-2">Programa</h5>
-<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/reclasificacion.R">reclasificacion.R</a></p>
+<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/reclasificacion.R">reclasificacion.R</a> (versión 1) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/reclasificacion-v2.R">reclasificacion-v2.R</a> (versión 2) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/reclasificacion-v3.R">reclasificacion-v3.R</a> (versión 3) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/reclasificacion-v4.R">reclasificacion-v4.R</a> (versión 4)</p>
 </section>
 <section id="entradas-3" class="level5">
 <h5 class="anchored" data-anchor-id="entradas-3">Entradas</h5>
@@ -361,7 +402,7 @@ Figura&nbsp;1: Procesamiento de datos.
 <p>Para reducir su tamaño, el archivo reclasificado se comprimió (con el comando <code>gdal_translate</code>) de la biblioteca <a href="https://gdal.org/">GDAL</a>.</p>
 <section id="programa-3" class="level5">
 <h5 class="anchored" data-anchor-id="programa-3">Programa</h5>
-<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/compresion-salidas.sh">compresion-salidas.sh</a></p>
+<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/compresion-salidas.sh">compresion-salidas.sh</a> (versión 1) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/compresion-salidas-v2.sh">compresion-salidas-v2.sh</a> (versión 2) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/compresion-salidas-v3.sh">compresion-salidas-v3.sh</a> (versión 3) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/compresion-salidas-v4.sh">compresion-salidas-v4.sh</a> (versión 4)</p>
 </section>
 <section id="entradas-4" class="level5">
 <h5 class="anchored" data-anchor-id="entradas-4">Entradas</h5>
@@ -379,7 +420,7 @@ Figura&nbsp;1: Procesamiento de datos.
 <p>En este último paso, se genera un archivo CSV con estadísticas relacionadas con el área ocupada por cada clase de cobertura.</p>
 <section id="programa-4" class="level5">
 <h5 class="anchored" data-anchor-id="programa-4">Programa</h5>
-<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-estadisticas.R">generacion-estadisticas.R</a></p>
+<p><a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-estadisticas.R">generacion-estadisticas.R</a> (versión 1) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-estadisticas-v2.R">generacion-estadisticas-v2.R</a> (versión 2) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-estadisticas-v3.R">generacion-estadisticas-v3.R</a> (versión 3) · <a href="https://github.com/mapa-agropecuario-forestal/2020/blob/main/programas/generacion-estadisticas-v4.R">generacion-estadisticas-v4.R</a> (versión 4)</p>
 </section>
 <section id="entradas-5" class="level5">
 <h5 class="anchored" data-anchor-id="entradas-5">Entradas</h5>

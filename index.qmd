@@ -4,11 +4,18 @@ Este sitio contiene mapas de referencia de tierras agropecuarias y cobertura for
 
 Para el año 2020, se generaron las siguientes versiones del mapa:
 
+- **Versión 1** (marzo de 2025): versión inicial, con 18 clases.
+- **Versión 2** (setiembre de 2025): se omiten los humedales (Registro Nacional de Humedales y cuerpos de agua REDD+).
+- **Versión 3** (octubre de 2025): se reincorporan los cuerpos de agua REDD+ (clase "Cuerpo de agua"). Es la versión publicada en el SNIT.
+- **Versión 4** (setiembre de 2026): se omiten las capas máscara de áreas silvestres protegidas y de Patrimonio Natural del Estado (PNE), a solicitud de MAG-MINAE, luego de detectarse que la capa de PNE de SINAC usada en el mapa fue reposicionada por SINAC en versiones posteriores. Los espacios que ocupaban se llenan con la jerarquía de las demás capas. El análisis del problema está en el [informe correspondiente](https://github.com/mapa-agropecuario-forestal/2020/blob/main/documentacion/analisis-desplazamiento-asp-pne-2026-09.md).
+
 ![Mapa agropecuario y forestal 2020 versión 1.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-v1.png){#fig-mapa-agropecuario-forestal-2020-v1 .lightbox fig-alt="Mapa agropecuario y forestal 2020 versión 1" fig-align="center"}
 
 ![Mapa agropecuario y forestal 2020 versión 2.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-v2.png){#fig-mapa-agropecuario-forestal-2020-v2 .lightbox fig-alt="Mapa agropecuario y forestal 2020 versión 2" fig-align="center"}
 
 ![Mapa agropecuario y forestal 2020 versión 3.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-v3.png){#fig-mapa-agropecuario-forestal-2020-v3 .lightbox fig-alt="Mapa agropecuario y forestal 2020 versión 3" fig-align="center"}
+
+![Mapa agropecuario y forestal 2020 versión 4.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-v4.png){#fig-mapa-agropecuario-forestal-2020-v4 .lightbox fig-alt="Mapa agropecuario y forestal 2020 versión 4" fig-align="center"}
 
 Los mapas son el producto de la combinación de capas geoespaciales de cultivos, áreas silvestres protegidas y humedales, las cuales fueron facilitadas por instituciones estatales, centros de investigación y cámaras de agricultores.
 
