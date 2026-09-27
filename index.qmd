@@ -7,7 +7,7 @@ Para el año 2020, se generaron las siguientes versiones del mapa:
 - **Versión 1** (marzo de 2025): versión inicial, con 18 clases.
 - **Versión 2** (setiembre de 2025): se omiten los humedales (Registro Nacional de Humedales y cuerpos de agua REDD+).
 - **Versión 3** (octubre de 2025): se reincorporan los cuerpos de agua REDD+ (clase "Cuerpo de agua"). Es la versión publicada en el SNIT.
-- **Versión 4** (setiembre de 2026): se omiten las capas máscara de áreas silvestres protegidas y de Patrimonio Natural del Estado (PNE), a solicitud de MAG-MINAE, luego de detectarse que la capa de PNE de SINAC usada en el mapa fue reposicionada por SINAC en versiones posteriores. Los espacios que ocupaban se llenan con la jerarquía de las demás capas. El análisis del problema está en el [informe correspondiente](https://github.com/mapa-agropecuario-forestal/2020/blob/main/documentacion/analisis-desplazamiento-asp-pne-2026-09.md).
+- **Versión 4** (setiembre de 2026): se omiten las capas máscara de Áreas Silvestres Protegidas (ASP) y de Patrimonio Natural del Estado (PNE).
 
 ![Mapa agropecuario y forestal 2020 versión 1.](https://raw.githubusercontent.com/mapa-agropecuario-forestal/2020/main/salidas/mapa-agropecuario-forestal-2020-v1.png){#fig-mapa-agropecuario-forestal-2020-v1 .lightbox fig-alt="Mapa agropecuario y forestal 2020 versión 1" fig-align="center"}
 
